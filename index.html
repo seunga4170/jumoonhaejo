@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>주문해조 | 건강한 한 끼</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <!-- 상단 헤더 -->
+    <header class="header">
+      <div class="header-top">
+        <div class="brand"><span class="brand-icon" aria-hidden="true">🥗</span><span>주문해조</span></div>
+        <button type="button" class="icon-button" data-page="장바구니" aria-label="장바구니 열기">🛒</button>
+      </div>
+      <p class="address">📍 배달 주소 <strong>서울시 구로구</strong></p>
+    </header>
+
+    <main>
+      <!-- 검색창 -->
+      <section class="search-section" aria-label="음식점 검색">
+        <label class="search-box" for="searchInput">
+          <span aria-hidden="true">🔍</span>
+          <input id="searchInput" type="search" placeholder="어떤 건강식을 찾으세요?" autocomplete="off" />
+        </label>
+      </section>
+
+      <!-- 서비스 소개 배너 -->
+      <section class="banner" aria-label="서비스 소개">
+        <div>
+          <p class="banner-label">오늘도 건강하게 💚</p>
+          <h1>맛있는 한 끼,<br />가볍게 주문해조!</h1>
+          <p class="banner-sub">샐러드부터 든든한 포케까지</p>
+        </div>
+        <span class="banner-emoji" aria-hidden="true">🥑</span>
+      </section>
+
+      <!-- 카테고리 버튼은 JavaScript에서 생성 -->
+      <section class="section" aria-labelledby="categoryTitle">
+        <h2 id="categoryTitle">어떤 음식이 당기세요?</h2>
+        <div id="categoryList" class="categories"></div>
+      </section>
+
+      <!-- 음식점 카드는 JavaScript에서 생성 -->
+      <section class="section restaurants-section" aria-labelledby="restaurantTitle">
+        <div class="section-title-row">
+          <h2 id="restaurantTitle">추천 음식점</h2>
+          <span id="resultCount" class="result-count"></span>
+        </div>
+        <div id="restaurantList" class="restaurant-list"></div>
+        <p id="emptyMessage" class="empty-message" hidden>검색 결과가 없어요. 다른 음식을 찾아보세요! 🌱</p>
+      </section>
+    </main>
+
+    <!-- 하단 네비게이션 -->
+    <nav class="bottom-nav" aria-label="하단 메뉴">
+      <button type="button" class="nav-item active" data-page="홈" aria-current="page"><span aria-hidden="true">🏠</span><small>홈</small></button>
+      <button type="button" class="nav-item" data-page="검색"><span aria-hidden="true">🔍</span><small>검색</small></button>
+      <button type="button" class="nav-item" data-page="장바구니"><span aria-hidden="true">🛒</span><small>장바구니</small></button>
+      <button type="button" class="nav-item" data-page="주문내역"><span aria-hidden="true">📋</span><small>주문내역</small></button>
+    </nav>
+  </div>
+</body>
+</html>
