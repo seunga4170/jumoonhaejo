@@ -1,0 +1,82 @@
+/* 공통 색상: 여기만 수정하면 전체 분위기를 쉽게 바꿀 수 있어요. */
+:root {
+  --green: #4CAF50;
+  --light-green: #E8F5E9;
+  --dark-green: #246B32;
+  --text: #26332A;
+  --muted: #748077;
+  --line: #EDF0EC;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #F3F5F3;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+/* 최대 폭 390px: PC에서도 모바일 화면처럼 보입니다. */
+.app {
+  max-width: 390px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #FFFFFF;
+  padding-bottom: 88px; /* 하단 메뉴와 내용이 겹치지 않도록 */
+  box-shadow: 0 0 26px rgba(0, 0, 0, .04);
+}
+.header { padding: 22px 20px 12px; }
+.header-top, .section-title-row { display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 8px; color: var(--dark-green); font-size: 25px; font-weight: 900; letter-spacing: -.8px; }
+.brand-icon { display: grid; place-items: center; width: 39px; height: 39px; background: var(--light-green); border-radius: 14px; font-size: 24px; }
+.icon-button { border: 0; background: var(--light-green); width: 40px; height: 40px; border-radius: 14px; font-size: 20px; }
+.address { margin: 16px 0 0; font-size: 12px; color: var(--muted); }
+.address strong { margin-left: 5px; font-size: 13px; color: var(--text); }
+.search-section { padding: 12px 20px 0; }
+.search-box { display: flex; align-items: center; gap: 10px; height: 48px; padding: 0 16px; background: #F6F8F5; border: 1px solid var(--line); border-radius: 15px; }
+.search-box:focus-within { border-color: var(--green); }
+.search-box input { min-width: 0; width: 100%; border: 0; outline: 0; background: transparent; font-size: 14px; }
+.search-box input::placeholder { color: #9AA49B; }
+.banner { display: flex; align-items: center; justify-content: space-between; margin: 18px 20px 0; padding: 20px; min-height: 156px; background: var(--light-green); border-radius: 20px; overflow: hidden; }
+.banner-label { margin: 0 0 10px; font-size: 12px; color: var(--dark-green); font-weight: 700; }
+.banner h1 { margin: 0; font-size: 21px; line-height: 1.4; letter-spacing: -.7px; }
+.banner-sub { margin: 9px 0 0; color: #5E8063; font-size: 11px; }
+.banner-emoji { font-size: 75px; transform: rotate(-13deg); }
+.section { padding: 27px 20px 0; }
+.section h2 { margin: 0 0 16px; font-size: 18px; letter-spacing: -.5px; }
+.categories { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; }
+.category { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 10px 2px; border: 1px solid transparent; border-radius: 14px; background: transparent; color: var(--text); }
+.category-emoji { display: grid; place-items: center; width: 51px; height: 51px; background: #F5F8F4; border-radius: 17px; font-size: 27px; }
+.category-name { white-space: nowrap; font-size: 11px; }
+.category.selected .category-emoji { background: var(--light-green); outline: 2px solid var(--green); }
+.category.selected .category-name { color: var(--dark-green); font-weight: 800; }
+.restaurants-section { padding-top: 30px; }
+.section-title-row h2 { margin-bottom: 14px; }
+.result-count { align-self: flex-start; color: var(--muted); font-size: 12px; }
+.restaurant-list { display: grid; gap: 13px; }
+.restaurant-card { display: flex; width: 100%; align-items: center; gap: 14px; padding: 11px; text-align: left; background: white; border: 1px solid var(--line); border-radius: 17px; box-shadow: 0 5px 16px rgba(33, 64, 39, .04); }
+.restaurant-card:hover { border-color: #B7DDB9; }
+.restaurant-image { display: grid; place-items: center; flex-shrink: 0; width: 100px; height: 100px; border-radius: 13px; font-size: 52px; }
+.restaurant-info { min-width: 0; }
+.restaurant-info strong { display: block; font-size: 15px; margin-bottom: 5px; }
+.restaurant-menu { display: block; color: var(--muted); font-size: 12px; margin-bottom: 10px; }
+.restaurant-meta { display: block; font-size: 11px; margin-top: 5px; }
+.restaurant-meta .star { color: #F5A524; }
+.empty-message { text-align: center; padding: 38px 8px; color: var(--muted); font-size: 13px; }
+.bottom-nav { position: fixed; z-index: 10; bottom: 0; left: 50%; transform: translateX(-50%); display: grid; grid-template-columns: repeat(4, 1fr); width: min(100%, 390px); min-height: 72px; padding: 8px 6px calc(8px + env(safe-area-inset-bottom)); background: white; border-top: 1px solid var(--line); }
+.nav-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 0; background: transparent; color: #87918A; }
+.nav-item span { font-size: 23px; }
+.nav-item small { font-size: 11px; }
+.nav-item.active { color: var(--dark-green); font-weight: 800; }
+
+/* 390px보다 작은 휴대폰에서도 자연스럽게 축소 */
+@media (max-width: 350px) {
+  .header { padding-left: 14px; padding-right: 14px; }
+  .search-section, .section { padding-left: 14px; padding-right: 14px; }
+  .banner { margin-left: 14px; margin-right: 14px; }
+  .banner-emoji { font-size: 55px; }
+  .category-emoji { width: 46px; height: 46px; }
+  .restaurant-image { width: 88px; height: 88px; }
+}
