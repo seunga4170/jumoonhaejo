@@ -1,0 +1,217 @@
+/* PC 화면에서도 깔끔하게 보이도록 바깥 배경색 지정 */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; 
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+}
+
+/* 💡 요청하신 전체 레이아웃 설정 💡 */
+.mobile-frame {
+    max-width: 390px;       /* 최대 너비 390px */
+    min-height: 100vh;      /* 최소 높이 100vh */
+    margin: 0 auto;         /* 화면 가운데 정렬 */
+    padding-bottom: 88px;   /* 하단 버튼과 겹치지 않게 여백 */
+    background-color: #f9f9f9; /* 장바구니 배경색 */
+    box-shadow: 0 0 20px rgba(0,0,0,0.05); /* PC 화면에서 영역 구분용 그림자 */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* 트렌디한 상단 헤더 스타일 */
+.modern-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.icon-btn:active {
+    background-color: #f4f5f7;
+}
+
+.header-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: #111;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+/* 본문 영역 */
+.cart-body {
+    padding: 20px;
+    flex: 1; /* 남은 공간을 차지하도록 설정 */
+}
+
+/* 메뉴 카드 */
+.cart-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.item-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+    margin: 0;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: #999;
+}
+
+.item-desc {
+    font-size: 13px;
+    color: #777;
+    margin: 0 0 15px 0;
+}
+
+.price-qty-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+/* 수량 조절 버튼 */
+.qty-control {
+    display: flex;
+    align-items: center;
+    background-color: #E8F5E9;
+    border-radius: 20px;
+    padding: 5px 12px;
+    gap: 12px;
+}
+
+.qty-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #4CAF50;
+    cursor: pointer;
+    padding: 0;
+}
+
+.qty {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    width: 15px;
+    text-align: center;
+}
+
+/* 메뉴 더 담기 버튼 */
+.add-more-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px dashed #4CAF50;
+    color: #4CAF50;
+    border-radius: 12px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+/* 결제 금액 요약 박스 */
+.cart-summary {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.summary-line {
+    border: 0;
+    border-top: 1px dashed #ddd;
+    margin: 15px 0;
+}
+
+.summary-row.total {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.summary-row.total .highlight {
+    color: #4CAF50;
+    font-size: 18px;
+}
+
+/* 💡 하단 고정 주문 버튼 영역 (화면 중앙 정렬) */
+.cart-bottom {
+    position: fixed; /* 브라우저 화면 하단에 고정 */
+    bottom: 0;
+    left: 50%; /* 중앙 정렬을 위한 설정 */
+    transform: translateX(-50%); /* 중앙 정렬 완료 */
+    width: 100%;
+    max-width: 390px; /* 모바일 프레임과 동일한 너비 적용 */
+    background-color: #FFFFFF;
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    z-index: 100;
+}
+
+.order-submit-btn {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니 - 주문해조</title>
+    <!-- 장바구니 전용 스타일만 독립적으로 불러옵니다 -->
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <!-- 레이아웃 규칙이 적용된 모바일 프레임 -->
+    <div class="mobile-frame">
+        
+        <!-- 트렌디하게 변경된 상단 헤더 -->
+        <header class="modern-header">
+            <button type="button" class="icon-btn" onclick="history.back()" aria-label="뒤로가기">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            
+            <h1 class="header-title">장바구니</h1>
+            
+            <button type="button" class="icon-btn" onclick="location.href='index.html'" aria-label="홈으로">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+            </button>
+        </header>
+
+        <!-- 장바구니 본문 -->
+        <main class="cart-body">
+            <!-- 담은 메뉴 카드 -->
+            <div class="cart-card" id="cartItem">
+                <div class="card-header">
+                    <h2 class="item-name">생연어 아보카도 포케</h2>
+                    <button class="delete-btn" id="deleteBtn">❌</button>
+                </div>
+                
+                <p class="item-desc">옵션: 스리라차 마요 소스, 현미밥</p>
+                
+                <div class="price-qty-row">
+                    <span class="price" data-price="12900">12,900원</span>
+                    
+                    <div class="qty-control">
+                        <button class="qty-btn minus">-</button>
+                        <span class="qty">1</span>
+                        <button class="qty-btn plus">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 메뉴 추가 버튼 -->
+            <button class="add-more-btn" onclick="location.href='index.html'">
+                + 메뉴 더 담으러 가기
+            </button>
+
+            <!-- 영수증 요약 박스 -->
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>주문금액</span>
+                    <span id="orderTotal">12,900원</span>
+                </div>
+                <div class="summary-row">
+                    <span>배달팁</span>
+                    <span id="deliveryFee">2,000원</span>
+                </div>
+                <hr class="summary-line">
+                <div class="summary-row total">
+                    <span>총 결제금액</span>
+                    <span id="finalTotal" class="highlight">14,900원</span>
+                </div>
+            </div>
+        </main>
+
+        <!-- 하단 주문 버튼 -->
+        <div class="cart-bottom">
+            <button id="orderBtn" class="order-submit-btn">주문 하기</button>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>
